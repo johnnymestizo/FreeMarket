@@ -2,6 +2,7 @@
 
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 
+require_once locate_template('/includes/util.php');            // Utilities file
 require_once locate_template('/includes/config.php');          // Configuration and constants
 require_once locate_template('/includes/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/includes/hooks.php');           // Hooks
