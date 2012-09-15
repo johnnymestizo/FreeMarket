@@ -22,11 +22,6 @@ function freemarket_setup() {
   // Make theme available for translation
   load_theme_textdomain('freemarket', get_template_directory() . '/lang');
 
-  // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
-  register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'freemarket'),
-  ));
-
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
   add_theme_support('post-thumbnails');
   // set_post_thumbnail_size(150, 150, false);

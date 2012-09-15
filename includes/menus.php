@@ -1,12 +1,4 @@
 <?php
 
-function freemarket_register_menus() {
-	register_nav_menus(
-		array(
-			'freemarket-top-menu'  => __('FreeMarket Top Menu', 'freemarket'),
-			'freemarket-main-menu' => __('FreeMarket Main Menu', 'freemarket')
-		)
-	);
-}
-
-add_action( 'init', 'freemarket_register_menus' );
+wp_create_nav_menu( 'FreeMarket Top Menu', array( 'slug' => 'freemarket-top-menu' ) );
+wp_create_nav_menu( 'FreeMarket Main Menu', array( 'slug' => 'freemarket-main-menu' ) );
