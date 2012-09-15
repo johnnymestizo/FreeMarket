@@ -49,6 +49,7 @@
 			</div>
 		</div>
 		
+		<div class="container-fluid">
 		<?php
 		$variation = get_theme_mod('freemarket_variation');
 		
@@ -63,6 +64,7 @@
 					<?php wp_nav_menu( array( 'menu' => 'FreeMarket Main Menu', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
 				</ul>
 			</div>
+		</div>
 		</div>
 		
 		<div id="maincontentarea">
