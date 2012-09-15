@@ -61,6 +61,7 @@ function freemarket_customize_register($wp_customize){
 		'title'       => __('Layout', 'freemarket'),
 		'priority'    => 16,
 	));
+	
 	$wp_customize->add_setting( 'freemarket_sidebar', array(
 		'type'        => 'theme_mod',
 		'capability'  => 'edit_theme_options',
@@ -75,6 +76,23 @@ function freemarket_customize_register($wp_customize){
 			'right'   => 'Right',
 		),
 	));
+	
+	if ( class_exists( 'MarketPress' ) ) {
+		$wp_customize->add_setting( 'freemarket_list_mode', array(
+			'type'        => 'theme_mod',
+			'capability'  => 'edit_theme_options',
+		) );
+		$wp_customize->add_control( 'variation', array(
+			'label'       => __( 'Sidebar Layout', 'freemarket' ),
+			'section'     => 'freemarket-layout',
+			'settings'    => 'freemarket_list_mode',
+			'type'        => 'select',
+			'choices'     => array(
+				'list'    => 'List',
+				'grid'   => 'Grid',
+			),
+		));
+	}
 	
 	$wp_customize->add_setting( 'freemarket_buttons_color', array(
 		'type'        => 'theme_mod',
@@ -131,6 +149,19 @@ function freemarket_sidebar_layout_class($echo = true){
 
 	if ($sidebar_class == 'left') {$class = 'left';
 	} else { $class = 'right'; }
+
+	if ($echo) {
+		echo $class;
+	} else {
+		return $class;
+	}
+}
+
+function freemarket_list_mode_class($echo = true){
+	$list_mode = get_theme_mod( 'freemarket_sidebar' );
+
+	if ($list_mode == 'list') {$class = 'list';
+	} else { $class = 'grid'; }
 
 	if ($echo) {
 		echo $class;
