@@ -5,11 +5,17 @@
   .header-logo-menu{position: relative;
     .menu-freemarket-top-menu-container{position: absolute; top: 0; right: 0;
       ul#menu-freemarket-top-menu{
-        li{float: left; list-style: none; list-style-type: none; margin-left: 2em;
-        }
+        li{float: left; list-style: none; list-style-type: none; margin-left: 2em;}
       }
     }
   }
 }
 
-.main-menu-wrapper{margin-top: 1em;}
+.main-menu-wrapper{margin-top: 1em;
+  .navbar{
+    .nav .current-menu-item a{color: @navbarLinkColorActive; text-decoration: none; background-color: @navbarLinkBackgroundActive; -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.125); -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125); box-shadow: inset 0 3px 8px rgba(0,0,0,.125);}
+  }
+  .navbar-inverse{
+    .nav .current-menu-item a{color: @navbarInverseLinkColorActive; background-color: @navbarInverseLinkBackgroundActive;}
+  }
+}
