@@ -88,3 +88,22 @@ function freemarket_customize_preview() {
 	</script>
 	<?php
 }
+
+function freemarket_button_class($echo = true){
+	$btn_class = get_theme_mod( 'freemarket_buttons_color' );
+
+	if ($btn_class == 'primary') {$class = 'btn btn-primary';
+	} elseif ($btn_class == 'info') { $class = 'btn btn-info';
+	} elseif ($btn_class == 'success') { $class = 'btn btn-success';
+	} elseif ($btn_class == 'warning') { $class = 'btn btn-warning';
+	} elseif ($btn_class == 'danger') { $class = 'btn btn-danger';
+	} elseif ($btn_class == 'inverse') { $class = 'btn btn-inverse';
+	} else { $class = 'btn'; }
+
+	if ($echo) {
+		echo $class;
+	} else {
+		return $class;
+	}
+}
+
