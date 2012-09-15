@@ -4022,3 +4022,15 @@ a.label:hover, a.badge:hover {
     overflow:visible !important;
   }
 }
+.header-branding { position:relative; }
+.header-branding .menu-freemarket-top-menu-container {
+  position:absolute;
+  top:0;
+  right:0;
+}
+.header-branding .menu-freemarket-top-menu-container ul#menu-freemarket-top-menu li {
+  float:left;
+  list-style:none;
+  list-style-type:none;
+  margin-left:2em;
+}

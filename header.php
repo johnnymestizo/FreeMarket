@@ -45,5 +45,7 @@
 	  	<div class="header_logo">
   			<a href="<?php get_home_url(); ?>"><?php freemarket_logo(); ?></a>
 	  	</div>
+	  	
+	  	<?php wp_nav_menu( array('menu' => 'FreeMarket Top Menu' )); ?>
   	</div>
   	<div id="maincontentarea">
