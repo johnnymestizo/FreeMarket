@@ -5,8 +5,9 @@ if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 require_once locate_template('/includes/config.php');          // Configuration and constants
 require_once locate_template('/includes/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/includes/hooks.php');           // Hooks
+require_once locate_template('/includes/handling-less.php');   // Less Handling
 if ( class_exists( 'MarketPress' ) ) {
-	require_once locate_template('/includes/marketpress.php');     // Marketpress functions
+	require_once locate_template('/includes/marketpress.php'); // Marketpress functions
 }
 
 load_theme_textdomain('freemarket');
