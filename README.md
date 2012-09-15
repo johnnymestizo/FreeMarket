@@ -22,3 +22,15 @@ Includes:
 
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 * [Modernizr](http://modernizr.com/)
+* [LessPHP](http://leafo.net/lessphp/)
+
+Other notes:
+------------
+
+This theme uses lessphp. If you want to change the css of this theme, you should change the `css/less/styles.less` file. 
+When something changes in that file, the `css/styles.css` file is re-compiled to reflect the changes.
+
+If you are not familiar with lesscss and want to know more, you can [read all about it's awesomeness here](http://lesscss.org/).
+However, if you're not in the mood to learn new things, you can write simple css in there and it will be included in the final css.
+
+Some advanced options can be configured in the `includes/config.php` file.
