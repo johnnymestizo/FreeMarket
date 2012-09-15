@@ -29,6 +29,8 @@
 
 	<?php freemarket_head(); ?>
 	<?php wp_head(); ?>
+	
+	<?php freemarket_customizations(); ?>
 
 </head>
 
