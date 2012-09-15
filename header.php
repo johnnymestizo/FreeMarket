@@ -34,7 +34,7 @@
 
 <body <?php body_class(); ?>>
 
-  <!--[if lt IE 7]><div class="alert">Ο browser σας είναι <em>πολύ παλιός!</em> <a href="http://browsehappy.com/">Αναβαθμίστε σε κάποιον διαφορετικό browser</a> ή <a href="http://www.google.com/chromeframe/?redirect=true">εγκαταστήστε το Google Chrome Frame</a> για να μπορέσετε να δείτε αυτή τη σελίδα.</div><![endif]-->
+  <!--[if lt IE 7]><div class="alert">Your browser is <em>too old!</em> <a href="http://browsehappy.com/">Update to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to be able to see this page.</div><![endif]-->
   
   <?php freemarket_header_before(); ?>
   <?php freemarket_header_after(); ?>
