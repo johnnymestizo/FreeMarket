@@ -76,4 +76,15 @@ function freemarket_customize_register($wp_customize){
 			'inverse' => 'Black',
 		),
 	));
+	if ( $wp_customize->is_preview() && ! is_admin() )
+		add_action( 'wp_footer', 'freemarket_customize_preview', 21);
+}
+
+function freemarket_customize_preview() {
+	?>
+	<script type="text/javascript">
+	( function( $ ){
+	} )( jQuery )
+	</script>
+	<?php
 }
