@@ -39,3 +39,21 @@ function freemarket_logo() {
 		);
 	} else { }
 }
+
+add_action( 'customize_register', 'freemarket_customize_register' );
+function freemarket_customize_register($wp_customize){
+	$wp_customize->add_setting( 'freemarket_variation', array(
+		'type'           => 'theme_mod',
+		'capability'     => 'edit_theme_options',
+	) );
+	$wp_customize->add_control( 'variation', array(
+		'label'      => __( 'Variation', 'freemarket' ),
+		'section'    => 'colors',
+		'settings'   => 'freemarket_variation',
+		'type'     => 'select',
+		'choices'     => array(
+			'light' => 'Light',
+			'dark'  => 'Dark',
+		),
+	));
+}
