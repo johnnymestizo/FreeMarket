@@ -107,3 +107,35 @@ function freemarket_button_class($echo = true){
 	}
 }
 
+function freemarket_customizations(){
+	$color = get_theme_mod( 'background_color' );
+	$variation = get_theme_mod('freemarket_variation');
+
+	function get_brightness($hex) {
+		// returns brightness value from 0 to 255
+		// strip off any leading #
+		$hex = str_replace('#', '', $hex);
+		$c_r = hexdec(substr($hex, 0, 2));
+		$c_g = hexdec(substr($hex, 2, 2));
+		$c_b = hexdec(substr($hex, 4, 2));
+
+		return (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
+	} ?>
+
+	<style>
+	<?php
+	if ($variation == 'dark') { ?>
+		#wrap{background: #333; color: #f7f7f7;}
+		a{color: #f2f2f2;}
+		.subnav{background: none;}
+		.sidenav > li > a:hover{color: #fff;}
+		.pager a{color: #fff; background: #222; border: 0;}
+		.pager a:hover{color: #f2f2f2; background: #1d1d1d;}
+	<?php } else { ?>
+		#wrap{background: #fff;}
+	<?php } ?>
+		a.btn{color: #333;}
+		a.btn-primary, a.btn-info, a.btn-success, a.btn-warning, a.btn-danger, a.btn-inverse{color: #fff;}
+	</style>
+	<?php
+}
