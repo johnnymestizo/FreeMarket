@@ -1,0 +1,1 @@
+Goal: Something like http://www.harrywinston.com/store/jewels/rings-jewels only better. :)
