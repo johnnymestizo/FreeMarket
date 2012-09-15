@@ -4047,3 +4047,11 @@ a.label:hover, a.badge:hover {
   color:#fff;
   background-color:#111111;
 }
+#sidebar ul { margin:0; }
+#sidebar ul li {
+  list-style:none;
+  list-style-type:none;
+}
+#sidebar ul li ul { margin-left:1.5em; }
+#main.left { float:right; }
+#main.right { float:left; }

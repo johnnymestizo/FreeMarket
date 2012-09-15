@@ -19,3 +19,16 @@
     .nav .current-menu-item a{color: @navbarInverseLinkColorActive; background-color: @navbarInverseLinkBackgroundActive;}
   }
 }
+
+#sidebar{
+  ul{margin: 0;
+    li{list-style: none; list-style-type: none;
+      ul{margin-left: 1.5em;}
+    }
+  }
+}
+
+#main{
+  &.left{float: right;}
+  &.right{float: left;}
+}

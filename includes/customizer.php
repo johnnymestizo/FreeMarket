@@ -43,29 +43,48 @@ function freemarket_logo() {
 add_action( 'customize_register', 'freemarket_customize_register' );
 function freemarket_customize_register($wp_customize){
 	$wp_customize->add_setting( 'freemarket_variation', array(
-		'type'           => 'theme_mod',
-		'capability'     => 'edit_theme_options',
+		'type'        => 'theme_mod',
+		'capability'  => 'edit_theme_options',
 	) );
 	$wp_customize->add_control( 'variation', array(
-		'label'      => __( 'Variation', 'freemarket' ),
-		'section'    => 'colors',
-		'settings'   => 'freemarket_variation',
-		'type'     => 'select',
+		'label'       => __( 'Variation', 'freemarket' ),
+		'section'     => 'colors',
+		'settings'    => 'freemarket_variation',
+		'type'        => 'select',
 		'choices'     => array(
-			'light' => 'Light',
-			'dark'  => 'Dark',
+			'light'   => 'Light',
+			'dark'    => 'Dark',
+		),
+	));
+	
+	$wp_customize->add_section('freemarket-layout', array(
+		'title'       => __('Layout', 'freemarket'),
+		'priority'    => 16,
+	));
+	$wp_customize->add_setting( 'freemarket_sidebar', array(
+		'type'        => 'theme_mod',
+		'capability'  => 'edit_theme_options',
+	) );
+	$wp_customize->add_control( 'variation', array(
+		'label'       => __( 'Sidebar Layout', 'freemarket' ),
+		'section'     => 'freemarket-layout',
+		'settings'    => 'freemarket_sidebar',
+		'type'        => 'select',
+		'choices'     => array(
+			'left'    => 'Left',
+			'right'   => 'Right',
 		),
 	));
 	
 	$wp_customize->add_setting( 'freemarket_buttons_color', array(
-		'type'           => 'theme_mod',
-		'capability'     => 'edit_theme_options',
+		'type'        => 'theme_mod',
+		'capability'  => 'edit_theme_options',
 	));
 	$wp_customize->add_control( 'buttons_color', array(
-		'label'      => __( 'Buttons Color', 'freemarket' ),
-		'section'    => 'colors',
-		'settings'   => 'freemarket_buttons_color',
-		'type'     => 'select',
+		'label'       => __( 'Buttons Color', 'freemarket' ),
+		'section'     => 'colors',
+		'settings'    => 'freemarket_buttons_color',
+		'type'        => 'select',
 		'choices'     => array(
 			'default' => 'White',
 			'primary' => 'Blue',
@@ -99,6 +118,19 @@ function freemarket_button_class($echo = true){
 	} elseif ($btn_class == 'danger') { $class = 'btn btn-danger';
 	} elseif ($btn_class == 'inverse') { $class = 'btn btn-inverse';
 	} else { $class = 'btn'; }
+
+	if ($echo) {
+		echo $class;
+	} else {
+		return $class;
+	}
+}
+
+function freemarket_sidebar_layout_class($echo = true){
+	$sidebar_class = get_theme_mod( 'freemarket_sidebar' );
+
+	if ($sidebar_class == 'left') {$class = 'left';
+	} else { $class = 'right'; }
 
 	if ($echo) {
 		echo $class;
