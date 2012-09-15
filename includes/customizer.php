@@ -56,4 +56,24 @@ function freemarket_customize_register($wp_customize){
 			'dark'  => 'Dark',
 		),
 	));
+	
+	$wp_customize->add_setting( 'freemarket_buttons_color', array(
+		'type'           => 'theme_mod',
+		'capability'     => 'edit_theme_options',
+	));
+	$wp_customize->add_control( 'buttons_color', array(
+		'label'      => __( 'Buttons Color', 'freemarket' ),
+		'section'    => 'colors',
+		'settings'   => 'freemarket_buttons_color',
+		'type'     => 'select',
+		'choices'     => array(
+			'default' => 'White',
+			'primary' => 'Blue',
+			'info'    => 'Light Blue',
+			'success' => 'Green',
+			'warning' => 'Orange',
+			'danger'  => 'Red',
+			'inverse' => 'Black',
+		),
+	));
 }
