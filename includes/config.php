@@ -8,7 +8,7 @@ if (!isset($content_width)) { $content_width = 940; }
 
 define('POST_EXCERPT_LENGTH',       40);
 define('WRAP_CLASSES', 'container');
-define('CONTAINER_CLASSES', 'row');
+define('CONTAINER_CLASSES', 'row-fluid');
 define('MAIN_CLASSES',              'span8');
 define('SIDEBAR_CLASSES',           'span4');
 define('FULLWIDTH_CLASSES',         'span12');
