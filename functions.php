@@ -6,7 +6,8 @@ require_once locate_template('/includes/util.php');            // Utilities file
 require_once locate_template('/includes/config.php');          // Configuration and constants
 require_once locate_template('/includes/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/includes/hooks.php');           // Hooks
-require_once locate_template('/includes/widgets.php');           // Hooks
+require_once locate_template('/includes/widgets.php');         // Hooks
+require_once locate_template('/includes/customizer.php');      // Theme Customizer extras
 require_once locate_template('/includes/handling-less.php');   // Less Handling
 if ( class_exists( 'MarketPress' ) ) {
 	require_once locate_template('/includes/marketpress.php'); // Marketpress functions

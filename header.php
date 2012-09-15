@@ -43,7 +43,7 @@
   <div id="wrap" class="<?php echo WRAP_CLASSES; ?>" role="document">
   	<div class="header-branding container-fluid">
 	  	<div class="header_logo">
-  			<a href="/"><?php if ( function_exists( 'the_logo' ) ) the_logo(); ?></a>
+  			<a href="<?php get_home_url(); ?>"><?php freemarket_logo(); ?></a>
 	  	</div>
   	</div>
   	<div id="maincontentarea">
