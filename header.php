@@ -49,7 +49,7 @@
 			</div>
 		</div>
 		
-		<div class="container-fluid">
+		<div class="container-fluid main-menu-wrapper">
 		<?php
 		$variation = get_theme_mod('freemarket_variation');
 		
