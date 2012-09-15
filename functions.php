@@ -2,24 +2,24 @@
 
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }
 
-require_once locate_template('/inc/config.php');          // Configuration and constants
-require_once locate_template('/inc/scripts.php');         // Scripts and stylesheets
-require_once locate_template('/inc/hooks.php');           // Hooks
+require_once locate_template('/includes/config.php');          // Configuration and constants
+require_once locate_template('/includes/scripts.php');         // Scripts and stylesheets
+require_once locate_template('/includes/hooks.php');           // Hooks
 if ( class_exists( 'MarketPress' ) ) {
-	require_once locate_template('/inc/marketpress.php');     // Marketpress functions
+	require_once locate_template('/includes/marketpress.php');     // Marketpress functions
 }
 
-load_theme_textdomain('basic');
+load_theme_textdomain('freemarket');
 add_theme_support( 'custom-background' );
 
-function basic_setup() {
+function freemarket_setup() {
 
   // Make theme available for translation
-  load_theme_textdomain('basic', get_template_directory() . '/lang');
+  load_theme_textdomain('freemarket', get_template_directory() . '/lang');
 
   // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
   register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'basic'),
+    'primary_navigation' => __('Primary Navigation', 'freemarket'),
   ));
 
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
@@ -34,7 +34,7 @@ function basic_setup() {
   add_editor_style('css/editor-style.css');
 }
 
-add_action('after_setup_theme', 'basic_setup');
+add_action('after_setup_theme', 'freemarket_setup');
 
 // Add support for flexible headers
 $header_args = array(
