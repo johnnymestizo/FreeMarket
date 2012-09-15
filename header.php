@@ -67,4 +67,4 @@
 		</div>
 		</div>
 		
-		<div id="maincontentarea">
+		<div id="maincontentarea" class="container-fluid">
