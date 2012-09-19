@@ -89,7 +89,7 @@ function freemarket_list_products( $echo = true, $paginate = '', $page = '', $pe
 
 		foreach ($custom_query->posts as $post) {
 			if (($count%4 == 1))
-				$class = 'product grid thumbnail span3 first';
+				$class = 'thumbnail span3 first';
 			elseif (($count%4 == 0))
 				$class = 'product grid thumbnail span3 last';
 			else
@@ -102,24 +102,15 @@ function freemarket_list_products( $echo = true, $paginate = '', $page = '', $pe
 			}
 			
 			$content .= '<div '.mp_product_class(false, $class, $post->ID).'>';
-			$content .= '<div class="inner">';
 			$content .= '<h3 class="product_name"><a href="' . get_permalink( $post->ID ) . '">' . $product_title . '</a></h3>';
 			
 			$product_content = mp_product_image( false, 'list', $post->ID );
 			$content .= apply_filters( 'mp_product_list_content', $product_content, $post->ID );
 			
-			$content .= mp_product_price(false, $post->ID, false);
-			$content .= '</div>';
-			$content .= '<div onclick="location.href=\'' . get_permalink( $post->ID ) . '\'" class="product_meta">';
-			
 			$meta = mp_product_price(false, $post->ID, false);
-			$meta .= '<div class="clearfix"></div>';
-			$meta .= '<span class="readmorebutton"><a class="btn btn-mini" href="' . get_permalink( $post->ID ) . '">' . __('Read More', 'freemarket') . '</a>';
-			$meta .= '<div class="clearfix"></div>';
 			$meta .= mp_buy_button(false, 'list', $post->ID);
 			$content .= apply_filters( 'mp_product_list_meta', $meta, $post->ID );
 			
-			$content .= '</div>';
 			$content .= '</div>';
 			
 		$count++;
