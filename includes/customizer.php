@@ -147,19 +147,6 @@ function freemarket_sidebar_layout_class($echo = true){
 	}
 }
 
-function freemarket_sidebar_class($echo = true){
-	$list_mode = get_theme_mod( 'freemarket_sidebar' );
-
-	if ($list_mode == 'list') {$class = 'list';
-	} else { $class = 'grid'; }
-
-	if ($echo) {
-		echo $class;
-	} else {
-		return $class;
-	}
-}
-
 function freemarket_customizations(){
 	$color     = get_theme_mod( 'background_color' );
 	$variation = get_theme_mod('freemarket_variation');
