@@ -43,13 +43,3 @@ $header_args = array(
 );
 
 add_theme_support( 'custom-header', $header_args );
-
-/*
- * Adding wpthumb
- */
-if (!class_exists('WP_Thumb') ) {
-	define( 'WP_THUMB_PATH', trailingslashit( STYLESHEETPATH . '/inc/wpthumb' ) );
-	define( 'WP_THUMB_URL', trailingslashit( get_stylesheet_directory_uri() . '/inc/wpThumb' ) );
-	require_once('inc/wpthumb/wpthumb.php');
-}
-
