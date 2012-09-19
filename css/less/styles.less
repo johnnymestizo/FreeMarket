@@ -39,3 +39,14 @@
     &.last{clear: right;}
   }
 }
+
+ul.subcategories{margin: 0; clear: both;
+  li{list-style: none; list-style-type: none; margin: 0 3px 5px 0; float: left; 
+    ul{display: none;}
+    a{.label; .label-inverse; font-weight: normal; text-decoration: none; background: @grayDark}
+    li.cat-item{display: inline-block;}
+    li.current-cat{
+      a{background: @grayLight}
+    }
+  }
+}
