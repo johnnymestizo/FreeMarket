@@ -52,8 +52,8 @@ function freemarket_customize_register($wp_customize){
 		'settings'    => 'freemarket_variation',
 		'type'        => 'select',
 		'choices'     => array(
-			'light'   => 'Light',
-			'dark'    => 'Dark',
+			'light'   => __('Light', 'freemarket'),
+			'dark'    => __('Dark', 'freemarket')
 		),
 	));
 	
@@ -72,8 +72,8 @@ function freemarket_customize_register($wp_customize){
 		'settings'    => 'freemarket_sidebar',
 		'type'        => 'select',
 		'choices'     => array(
-			'left'    => 'Left',
-			'right'   => 'Right',
+			'left'    => __('Left', 'freemarket'),
+			'right'   => __('Right', 'freemarket')
 		),
 	));
 	
@@ -82,16 +82,6 @@ function freemarket_customize_register($wp_customize){
 			'type'        => 'theme_mod',
 			'capability'  => 'edit_theme_options',
 		) );
-		$wp_customize->add_control( 'products_list_mode', array(
-			'label'       => __( 'Products List Mode', 'freemarket' ),
-			'section'     => 'freemarket-layout',
-			'settings'    => 'freemarket_list_mode',
-			'type'        => 'select',
-			'choices'     => array(
-				'list'    => 'List',
-				'grid'   => 'Grid',
-			),
-		));
 	}
 	
 	$wp_customize->add_setting( 'freemarket_buttons_color', array(
@@ -104,13 +94,13 @@ function freemarket_customize_register($wp_customize){
 		'settings'    => 'freemarket_buttons_color',
 		'type'        => 'select',
 		'choices'     => array(
-			'default' => 'White',
-			'primary' => 'Blue',
-			'info'    => 'Light Blue',
-			'success' => 'Green',
-			'warning' => 'Orange',
-			'danger'  => 'Red',
-			'inverse' => 'Black',
+			'default' => __('White', 'freemarket'),
+			'primary' => __('Blue', 'freemarket'),
+			'info'    => __('Light Blue', 'freemarket'),
+			'success' => __('Green', 'freemarket'),
+			'warning' => __('Orange', 'freemarket'),
+			'danger'  => __('Red', 'freemarket'),
+			'inverse' => __('Black', 'freemarket')
 		),
 	));
 	if ( $wp_customize->is_preview() && ! is_admin() )
