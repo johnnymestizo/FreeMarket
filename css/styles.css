@@ -4055,3 +4055,6 @@ a.label:hover, a.badge:hover {
 #sidebar ul li ul { margin-left:1.5em; }
 #main.left { float:right; }
 #main.right { float:left; }
+#product_list .product { margin-bottom:10px; }
+#product_list .product.first { margin-left:0; }
+#product_list .product.last { clear:right; }

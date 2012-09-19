@@ -88,12 +88,12 @@ function freemarket_list_products( $echo = true, $paginate = '', $page = '', $pe
 		$count = 1;
 
 		foreach ($custom_query->posts as $post) {
-			if (($count%4 == 1))
-				$class = 'thumbnail span3 first';
-			elseif (($count%4 == 0))
-				$class = 'product grid thumbnail span3 last';
+			if (($count%3 == 1))
+				$class = 'thumbnail span4 first';
+			elseif (($count%3 == 0))
+				$class = 'thumbnail span4 third';
 			else
-				$class = 'product grid thumbnail span3';
+				$class = 'thumbnail span4 second';
 			
 			if(strlen(utf8_decode($post->post_title))>40){
 				$product_title = mb_substr($post->post_title,0,40,'UTF-8').'...';
@@ -104,8 +104,10 @@ function freemarket_list_products( $echo = true, $paginate = '', $page = '', $pe
 			$content .= '<div '.mp_product_class(false, $class, $post->ID).'>';
 			$content .= '<h3 class="product_name"><a href="' . get_permalink( $post->ID ) . '">' . $product_title . '</a></h3>';
 			
+			$content .= '<div class="product-image-wrapper clearfix">';
 			$product_content = mp_product_image( false, 'list', $post->ID );
 			$content .= apply_filters( 'mp_product_list_content', $product_content, $post->ID );
+			$content .= '</div>';
 			
 			$meta = mp_product_price(false, $post->ID, false);
 			$meta .= mp_buy_button(false, 'list', $post->ID);
