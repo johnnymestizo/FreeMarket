@@ -14,15 +14,16 @@
 				<h1 itemprop="name" class="mp_product_name"><?php echo $post->post_title; ?></h1>
 			</header>
 			<div itemprop="description" class="mp_product_content">
-				<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mp_product_meta">
-					<div class="pull-left"><?php mp_product_price(true, $post->ID); ?></div>
-					<div class="pull-right"><?php mp_buy_button(true, 'single', $post->ID); ?></div>
-					
-					<div class="clearfix"></div>
-					
-					<?php mp_product_image( true, 'full', $post->ID ); ?>
-					
-					<?php echo apply_filters('the_content', $post->post_content); ?>
+				<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mp_product_meta row-fluid">
+					<div class="span8 product-image-wrapper">
+						<?php mp_product_image( true, 'full', $post->ID ); ?>
+					</div>
+					<div class="span4 product-details">
+						<div class="pull-left"><?php mp_product_price(true, $post->ID, ''); ?></div>
+						<div class="pull-right"><?php mp_buy_button(true, 'single', $post->ID); ?></div>
+						<div class="clearfix"></div>
+						<?php echo apply_filters('the_content', $post->post_content); ?>
+					</div>
 				</div>
 			</div>
 		</article>

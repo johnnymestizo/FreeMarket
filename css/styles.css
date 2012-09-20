@@ -4022,6 +4022,7 @@ a.label:hover, a.badge:hover {
     overflow:visible !important;
   }
 }
+#wrap { padding-bottom:20px; }
 .header-branding .header-logo-menu { position:relative; }
 .header-branding .header-logo-menu .menu-freemarket-top-menu-container {
   position:absolute;
@@ -4191,3 +4192,4 @@ ul.subcategories li li.current-cat a { background:#999; }
 }
 .single-product .mp_product_meta .mp_quantity { float:left; }
 .single-product .mp_product_meta .mp_quantity input.mp_quantity_field { width:50px; }
+.single-product .product-image-wrapper { margin-bottom:20px; }
