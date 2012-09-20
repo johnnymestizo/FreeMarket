@@ -4183,3 +4183,11 @@ ul.subcategories li li.current-cat a { background:#999; }
   -moz-box-shadow:none;
   box-shadow:none;
 }
+.single-product h1.mp_product_name { border-bottom:1px solid #999; }
+.single-product .mp_product_meta .mp_product_price {
+  font-size:30px;
+  font-weight:bold;
+  color:#555;
+}
+.single-product .mp_product_meta .mp_quantity { float:left; }
+.single-product .mp_product_meta .mp_quantity input.mp_quantity_field { width:50px; }
