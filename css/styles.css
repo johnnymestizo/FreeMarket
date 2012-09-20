@@ -4061,6 +4061,7 @@ a.label:hover, a.badge:hover {
 }
 #product_list .product.first { margin-left:0; }
 #product_list .product.last { clear:right; }
+#product_list .product .product_name a { color:#333; }
 ul.subcategories {
   margin:0;
   clear:both;
