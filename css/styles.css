@@ -4193,3 +4193,11 @@ ul.subcategories li li.current-cat a { background:#999; }
 .single-product .mp_product_meta .mp_quantity { float:left; }
 .single-product .mp_product_meta .mp_quantity input.mp_quantity_field { width:50px; }
 .single-product .product-image-wrapper { margin-bottom:20px; }
+.mp_product_price {
+  background:none;
+  padding:0;
+}
+.mp_store_navigation li, #mp_popular_products li, #mp_category_list li, .product_category li {
+  background:none;
+  padding-left:0;
+}
