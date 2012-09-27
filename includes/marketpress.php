@@ -104,7 +104,7 @@ function freemarket_list_products( $echo = true, $paginate = '', $page = '', $pe
 			$content .= '<div '.mp_product_class(false, $class, $post->ID).'>';
 			
 			$content .= '<div class="product-image-wrapper clearfix">';
-			$product_content = mp_product_image( false, 'list', $post->ID );
+			$product_content = mp_product_image( false, 'list', $post->ID, 'fm_prod_thumb' );
 			$content .= apply_filters( 'mp_product_list_content', $product_content, $post->ID );
 			$content .= '</div>';
 			

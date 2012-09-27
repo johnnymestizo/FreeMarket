@@ -4060,8 +4060,11 @@ a.label:hover, a.badge:hover {
   margin-bottom:10px;
   text-align:center;
 }
-#product_list .product.first { margin-left:0; }
-#product_list .product.last { clear:right; }
+#product_list .product.first {
+  margin-left:0;
+  clear:left;
+}
+#product_list .product.third { clear:right; }
 #product_list .product .product_name a { color:#333; }
 ul.subcategories {
   margin:0;

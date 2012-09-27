@@ -65,7 +65,7 @@ function freemarket_customize_register($wp_customize){
 	$wp_customize->add_setting( 'freemarket_sidebar', array(
 		'type'        => 'theme_mod',
 		'capability'  => 'edit_theme_options',
-	) );
+	));
 	$wp_customize->add_control( 'variation', array(
 		'label'       => __( 'Sidebar Layout', 'freemarket' ),
 		'section'     => 'freemarket-layout',

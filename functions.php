@@ -17,6 +17,8 @@ if ( class_exists( 'MarketPress' ) ) {
 load_theme_textdomain('freemarket');
 add_theme_support( 'custom-background' );
 
+add_theme_support('mp_style'); //Removes MarketPress default styles
+
 function freemarket_setup() {
 
   // Make theme available for translation
@@ -26,6 +28,7 @@ function freemarket_setup() {
   add_theme_support('post-thumbnails');
   // set_post_thumbnail_size(150, 150, false);
   // add_image_size('category-thumb', 300, 9999); // 300px wide (and unlimited height)
+  add_image_size('fm_prod_thumb', 300, 200, true);
 
   // Add post formats (http://codex.wordpress.org/Post_Formats)
   // add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat'));
