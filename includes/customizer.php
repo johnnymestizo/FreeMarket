@@ -37,7 +37,11 @@ function freemarket_logo() {
 			get_option('freemarket-logo'),
 			get_bloginfo('name')
 		);
-	} else { }
+	} else {
+	  echo '<h1>';
+	  bloginfo('name');
+    echo '</h1>';
+	}
 }
 
 add_action( 'customize_register', 'freemarket_customize_register' );
