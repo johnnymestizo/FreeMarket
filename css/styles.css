@@ -4204,3 +4204,14 @@ ul.subcategories li li.current-cat a { background:#999; }
   background:none;
   padding-left:0;
 }
+.admin-customize a {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100px;
+  height:100px;
+  display:block;
+  background:url("../img/corner.png") no-repeat bottom left;
+  opacity:0.5;
+}
+.admin-customize a:hover { opacity:1; }

@@ -19,7 +19,7 @@ class FreeMarketLogoCustomizer {
 		));
 		$wp_customize->add_control(new WP_Customize_Image_Control(
 			$wp_customize,
-			'logo_Image',
+			'freemarket-logo',
 			array(
 				'label'     => __('Image', 'freemarket'),
 				'section'   => 'freemarket-logo',
