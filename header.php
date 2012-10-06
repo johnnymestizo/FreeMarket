@@ -60,9 +60,11 @@
 		}
 		?>
 			<div class="navbar-inner">
-				<ul class="nav">
-					<?php wp_nav_menu( array( 'menu' => 'FreeMarket Main Menu', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
-				</ul>
+        <?php
+          if (has_nav_menu('freemarket-main-menu')) {
+            wp_nav_menu(array('theme_location' => 'freemarket-main-menu', 'menu_class' => 'nav'));
+          }
+        ?>
 			</div>
 		</div>
 		</div>
