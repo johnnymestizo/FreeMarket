@@ -1,0 +1,74 @@
+@import "../../assets/css/less/global.less";
+
+.product{border-top: 0; margin-top:0; padding: 0;}
+.mp_product_price{background: none; margin: 0; line-height: 1;}
+.mp_product_image_list, .mp_product_image_single, .mp_product_image_widget{-moz-box-shadow: 0 0 0 #fff; -webkit-box-shadow: 0 0 0 #fff; box-shadow: 0 0 0 #fff; border: 0;}
+
+#mp_product_list a.mp_link_buynow, .mp_button_addcart, .mp_button_buynow, .single .mp_button_addcart, .single .mp_button_buynow {.btn;}
+
+#product_list{
+  .product{background: #fff; margin-bottom: 20px; position: relative; -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    .product_name, .content{padding: 0 10px;
+      a{color: #333;}
+    }
+    img{margin-bottom: 7px; clear: both; float: none; max-width: 100%; height: auto;}
+    .mp_product_price{position: absolute; top: 0; right: -1px; font-weight: bold; font-size: 18px; padding: 10px; .border-bottom-left-radius(4px);}
+    .mp_buy_form{text-align: center; padding: 0 10px;}
+    &.first{margin-left: 0; clear: left;}
+    &.third{clear: right;}
+  }
+  &.global{
+    .product{
+      .product_content{padding: 0 10px;}
+      .mp_product_meta{margin-bottom: 10px; text-align: center;}
+      &:nth-child(3n){clear: right;}
+      &:nth-child(3n+1){clear: left; margin-left: 0;}
+    }
+  }
+}
+
+.product-single{
+  .mp_product_meta{margin: 20px 0;
+    .mp_product_price{font-family: Georgia, serif; font-size: 36px; color: @linkColor; font-weight: bold;}
+    .mp_buy_form{.pull-right;
+      .mp_quantity{.pull-left;
+        .mp_quantity_field{width: 50px;}
+      }
+    }
+  }
+  .mp_product_content{clear: both;}
+}
+
+#mp_cart_form{
+  table.mp_cart_contents{.table;
+    input[type="submit"]{.btn;}
+    .mp_cart_col_thumb{
+      img{margin: 0;}
+    }
+    .mp_cart_col_quant{
+      input[type="text"]{display: inline-block;}
+      label{display: inline-block;}
+    }
+    #coupon-code{
+      input.btn{margin-top: -10px;}
+    }
+  }
+}
+
+a.mp_cart_direct_checkout_link, input#mp_shipping_submit, input#mp_payment_confirm{.btn; .btn-large;}
+
+.mp_old_price{margin-right: 10px;}
+
+#mp_shipping_form{
+  .mp_cart_shipping{.table;
+    
+  }
+}
+
+table.mp_cart_contents, table.mp_cart_shipping, .mp_cart_contents_widget{.table;}
+
+.mp_cart_actions_widget{
+  a{margin-right: 10px;
+    &.mp_checkout_link{float: right;}
+  }
+}

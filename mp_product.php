@@ -1,38 +1,24 @@
-<?php get_header(); ?>
-<?php freemarket_content_before(); ?>
-
-<div id="content" class="<?php echo CONTAINER_CLASSES; ?>">
-	<?php freemarket_main_before(); ?>
-	<div id="main" class="<?php echo MAIN_CLASSES; ?> <?php freemarket_sidebar_layout_class(); ?>" role="main">
-		<article itemscope itemtype="http://schema.org/Product" <?php mp_product_class(false, 'mp_product', $post->ID) ?> id="post-<?php the_ID(); ?>">
+	<div itemscope itemtype="http://schema.org/Product" class="product-single">
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
-				<?php if ( current_user_can('edit_posts') ){ ?>
+				<?php if ( current_user_can('manage_options') ){ ?>
 					<div class="EditProductEntryButton" style="float: right;">
-						<a class="btn" href="/wp-admin/post.php?post=<?php the_ID(); ?>&action=edit"><?php _e('Edit Product', 'freemarket') ?></a>
+						<a class="btn" href="<?php echo admin_url(); ?>post.php?post=<?php the_ID(); ?>&action=edit"><?php _e('Edit Product', 'freemarket') ?></a>
 					</div>
 				<?php } ?>
-				<h1 itemprop="name" class="mp_product_name"><?php echo $post->post_title; ?></h1>
-			</header>
-			<div itemprop="description" class="mp_product_content">
-				<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mp_product_meta row-fluid">
-					<div class="product-image-wrapper pull-left">
-						<?php mp_product_image( true, 'full', $post->ID ); ?>
-					</div>
-					<div class="product-details">
-					  <?php echo apply_filters('the_content', $post->post_content); ?>
-					  <div class="clearfix"></div>
-						<div class="pull-left"><?php mp_product_price(true, $post->ID, ''); ?></div>
-						<div class="pull-right"><?php mp_buy_button(true, 'single', $post->ID); ?></div>
-						<div class="clearfix"></div>
-					</div>
+				<h1 itemprop="name" class="mp_product_name" class="entry-title"><?php the_title(); ?></h1>
+				
+				<div class="addthis_toolbox addthis_default_style ">
+					<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+					<a class="addthis_button_tweet"></a>
+					<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+					<a class="addthis_counter addthis_pill_style"></a>
 				</div>
-			</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e8994de6a13ee6a"></script>
+			</header>
+			
+			<?php freemarket_product_with_slider($post->ID); ?>
+			
 		</article>
 	</div><!-- /#main -->
-	<?php freemarket_main_after(); ?>
-	
-	<?php get_sidebar(); ?>
-	
-</div><!-- /#content -->
-<?php freemarket_content_after(); ?>
-<?php get_footer(); ?>
