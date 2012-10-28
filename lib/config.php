@@ -64,7 +64,3 @@ define('THEME_PATH',                RELATIVE_CONTENT_PATH . '/themes/' . THEME_N
 
 // Set the content width based on the theme's design and stylesheet
 if (!isset($content_width)) { $content_width = 940; }
-
-define ('EDD_SL_STORE_URL',         'http://aristeides.com');
-define ('EDD_SL_ITEM_NAME',         'Bootstrap Commerce');
-define ('EDD_SL_ITEM_NAME',         'Bootstrap Commerce');

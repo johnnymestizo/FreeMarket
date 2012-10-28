@@ -1,7 +1,7 @@
 <?php
 
 function phpless(){
-  if (!class_exists(lessc)){
+  if (!class_exists('lessc')){
     require_once( TEMPLATEPATH . '/lib/less/lessc.inc.php' );
   }
   $less = new lessc;
