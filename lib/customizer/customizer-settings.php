@@ -7,15 +7,18 @@ function freemarket_customize_register_settings($wp_customize){
   $settings[] = array( 'slug'=>'freemarket_variation',          'default' => 'light');
   $settings[] = array( 'slug'=>'freemarket_navbar_light_dark',  'default' => 'light');
   $settings[] = array( 'slug'=>'freemarket_sidebar',            'default' => 'hide');
-  $settings[] = array( 'slug'=>'link_text_color',                       'default' => '#0088cc');
-  $settings[] = array( 'slug'=>'freemarket-logo',                    'default' => '');
-  $settings[] = array( 'slug'=>'bc_header_backgroundcolor',             'default' => '#ff9900');
-  $settings[] = array( 'slug'=>'bc_header_textcolor',                   'default' => '#ffffff');
-  $settings[] = array( 'slug'=>'bc_footer_color',                       'default' => '#ffffff');
+  $settings[] = array( 'slug'=>'link_text_color',               'default' => '#0088cc');
+  $settings[] = array( 'slug'=>'freemarket-logo',               'default' => '');
+  $settings[] = array( 'slug'=>'bc_header_backgroundcolor',     'default' => '#ff9900');
+  $settings[] = array( 'slug'=>'bc_header_textcolor',           'default' => '#ffffff');
+  $settings[] = array( 'slug'=>'bc_footer_color',               'default' => '#ffffff');
+  $settings[] = array( 'slug'=>'bc_fontfamily',                 'default' => 'arial');
+  $settings[] = array( 'slug'=>'shoestrap_advanced_head',       'default' => '');
+  $settings[] = array( 'slug'=>'shoestrap_advanced_footer',     'default' => '');
   
   if ( class_exists( 'MarketPress' ) ) {
-    $settings[] = array( 'slug'=>'bc_feat_home_slider',                 'default' => 'show');
-    $settings[] = array( 'slug'=>'bc_buttons_color',                    'default' => '#0088cc');
+    $settings[] = array( 'slug'=>'bc_feat_home_slider',         'default' => 'show');
+    $settings[] = array( 'slug'=>'bc_buttons_color',            'default' => '#0088cc');
   }
 
   foreach($settings as $setting){

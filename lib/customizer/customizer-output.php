@@ -8,6 +8,20 @@ function freemarket_customizations(){
   $btn_class              = get_theme_mod('freemarket_buttons_color');
   $link_color             = get_theme_mod('link_text_color');
   $footer_color           = get_theme_mod('bc_footer_color');
+  
+  $fontfamily             = get_theme_mod('bc_fontfamily');
+  
+  if ($fontfamily = 'verdana'){
+    $font_family = 'Verdana, Geneva, sans-serif';
+  } elseif ($fontfamily = 'georgia'){
+    $font_family = 'Georgia, serif';
+  } elseif ($fontfamily = 'times'){
+    $font_family = '"Times New Roman", Times, serif';
+  } elseif ($fontfamily = 'tahoma'){
+    $font_family = 'Tahoma, Geneva, sans-serif';
+  } else {  // default
+    $font_family = 'Arial, Helvetica, sans-serif';
+  }
   ?>
   
   <style>
@@ -43,8 +57,9 @@ function freemarket_customizations(){
       }
     } ?>
     body, input, button, select, textarea, .search-query, .product-single .mp_product_meta .mp_product_price{
-      font-family: '<?php echo $webfont; ?>';
+      font-family: '<?php echo $font_family; ?>';
     }
+    
   </style>
   <?php
 

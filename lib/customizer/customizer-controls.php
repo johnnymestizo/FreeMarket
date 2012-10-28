@@ -1,5 +1,22 @@
 <?php
 
+/*
+ * This class creates a custom textarea control to be used in the "advanced" settings of the theme.
+ * This will allow users to add their custom css & sripts right from the customizer
+ */
+if ( class_exists( 'WP_Customize_Control' ) ) {
+  class Shoestrap_Customize_Textarea_Control extends WP_Customize_Control {
+    public $type = 'textarea';
+    
+    public function render_content() { ?>
+      <label>
+        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+      </label>
+    <?php }
+  }
+}
+
 add_action( 'customize_register', 'freemarket_customize_register_controls' );
 function freemarket_customize_register_controls($wp_customize){
   
@@ -136,6 +153,44 @@ function freemarket_customize_register_controls($wp_customize){
       'priority'  => 1
     )
   ));
+
+/*
+ * TYPOGRAPHY
+ */
+  $wp_customize->add_control( 'bc_fontfamily', array(
+    'label'       => __( 'Font Family', 'freemarket' ),
+    'section'     => 'bc_typography',
+    'settings'    => 'bc_fontfamily',
+    'type'        => 'select',
+    'priority'    => 2,
+    'choices'     => array(
+      'arial'     => __('Arial, Helvetica, sans-serif', 'freemarket'),
+      'verdana'   => __('Verdana, Geneva, sans-serif', 'freemarket'),
+      'georgia'   => __('Georgia, serif', 'freemarket'),
+      'times'     => __('"Times New Roman", Times, serif', 'freemarket'),
+      'tahoma'    => __('Tahoma, Geneva, sans-serif', 'freemarket'),
+    ),
+  ));
+  
+/*
+ * ADVANCED SECTION
+ */
+ 
+  // Header scripts (css/js)
+  $wp_customize->add_control( new Shoestrap_Customize_Textarea_Control( $wp_customize, 'shoestrap_advanced_head', array(
+    'label'       => 'Header Scripts (CSS/JS)',
+    'section'     => 'shoestrap_advanced',
+    'settings'    => 'shoestrap_advanced_head',
+    'priority'    => 1,
+  )));
+
+  // Footer scripts (css/js)
+  $wp_customize->add_control( new Shoestrap_Customize_Textarea_Control( $wp_customize, 'shoestrap_advanced_footer', array(
+    'label'       => 'Footer Scripts (CSS/JS)',
+    'section'     => 'shoestrap_advanced',
+    'settings'    => 'shoestrap_advanced_footer',
+    'priority'    => 2,
+  )));
 
  
 
