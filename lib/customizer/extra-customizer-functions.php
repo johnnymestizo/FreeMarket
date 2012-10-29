@@ -30,6 +30,19 @@ function freemarket_get_brightness($hex) {
   return (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
 }
 
+function freemarket_custom_header_scripts() {
+  $header_scripts = get_theme_mod( 'freemarket_advanced_head' );
+  echo $header_scripts;
+}
+add_action( 'wp_head', 'freemarket_custom_header_scripts', 200 );
+
+function freemarket_custom_footer_scripts() {
+  $footer_scripts = get_theme_mod( 'freemarket_advanced_footer' );
+  echo $footer_scripts;
+}
+add_action( 'wp_footer', 'freemarket_custom_footer_scripts', 200 );
+
+
 function freemarket_customize_preview() {
   ?>
   <script type="text/javascript">
